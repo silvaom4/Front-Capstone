@@ -4,6 +4,7 @@ import pdfToText from 'react-pdftotext';
 import sanitizeHtml from "sanitize-html";
 import { Button, Input } from "reactstrap";
 import FileUpload from "./FileUpload";
+import Header from './Header';
 
 
 function CotntSum() {
@@ -66,6 +67,7 @@ function CotntSum() {
   
   return (
     <div>
+      <Header />
       <form>
       {/* <input type="file" accept="application/pdf" onChange={extractText} /> */}
       <FileUpload />

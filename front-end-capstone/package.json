@@ -58,7 +58,7 @@
     "react-dom": ">=16.0.0",
     "react-dropzone": "^14.2.3",
     "react-pdftotext": "^1.1.1",
-    "react-router-dom": "6.11.1",
+    "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
     "reactstrap": "8.10.0",
     "sanitize-html": "^2.12.1",
