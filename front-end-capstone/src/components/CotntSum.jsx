@@ -2,8 +2,9 @@ import React, {useEffect, useState} from "react";
 import OpenAI from "openai";
 import pdfToText from 'react-pdftotext';
 import sanitizeHtml from "sanitize-html";
-import { Button } from "reactstrap";
-
+import { Button, Input } from "reactstrap";
+import FileUpload from "./FileUpload";
+import Header from './Header';
 
 
 function CotntSum() {
@@ -52,6 +53,7 @@ function CotntSum() {
 
     function extractText(event) {
       const file = event.target.files[0];
+      console.log(event.target.files);
       if (file) {
         pdfToText(file)
           .then((text) => setText(text))
@@ -65,9 +67,20 @@ function CotntSum() {
   
   return (
     <div>
+      <Header />
       <form>
-      <input type="file" accept="application/pdf" onChange={extractText} />
-        <input type="text" placeholder="Enter your text here" maxLength={20000} onChange={handleChange}/>
+      {/* <input type="file" accept="application/pdf" onChange={extractText} /> */}
+      <FileUpload />
+      <h1></h1>
+        <Input
+            // id="exampleFormControlTextarea1"
+            placeholder="Enter your text here"
+            maxLength={20000}
+            onChange={handleChange}
+            rows="3"
+            type="textarea"
+            bsSize="sm"
+          />
         <Button color="primary" outline type="button" onClick={handleSubmit}>Submit</Button>
         <p dangerouslySetInnerHTML={sanitizeResponse(response)}></p>
       </form>
