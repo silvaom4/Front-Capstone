@@ -27,6 +27,7 @@ export default function Login() {
                 localStorage.setItem('Name', data.user.FirstName);
                 localStorage.setItem('Admin', data.user.isAdmin);
                 console.log(data.message)
+                window.location.href = '/';
             }
             
         })
