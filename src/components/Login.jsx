@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button, Input, FormGroup } from "reactstrap";
+import '../assets/css/login.css'
 
 export default function Login() {
     const login = (e) => {
@@ -34,14 +36,35 @@ export default function Login() {
     }
   return (
     <div>
-        <div>
+    <div className='login_form'>
+        <div className='login_input'>
         <form onSubmit={login}>
-            <input placeholder='John@example.com' id='login_email' type='text'></input>
-            <input placeholder='password' id='login_password' type='password'></input>
-            <button>Login</button>
+            {/* <input placeholder='John@example.com' id='login_email' type='text'></input> */}
+            <div>
+            <FormGroup>
+                <Input
+                  id="login_email"
+                  placeholder="name@example.com"
+                  type="email"
+                />
+              </FormGroup>
+              <FormGroup>
+                <Input
+                  id="login_password"
+                  placeholder="password"
+                  type="password"
+                />
+              </FormGroup>
+              </div>
+              <div className='login_bottom'>
+            <Button color="primary" outline type='submit'>
+          Login
+        </Button>
             <a href="/register">Don't have an account? Register Here</a>
+            </div>
         </form>
         </div>
     </div>
+    </div>  
   )
 }

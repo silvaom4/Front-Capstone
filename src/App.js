@@ -6,6 +6,7 @@ import "./assets/scss/argon-design-system-react.scss?v1.1.0";
 import CotntSum from './components/CotntSum';
 import Login from './components/Login';
 import Register from './components/Register';
+import Forum from './components/Forum';
 import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<CotntSum />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
+            <Route path="/forum" element={<Forum />}></Route>
 
           </Routes>
           
