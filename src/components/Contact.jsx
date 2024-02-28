@@ -5,7 +5,6 @@ import ContactCSS from "../assets/css/contact.css";
 import { IonIcon } from "@ionic/react";
 import { alertCircleOutline } from "ionicons/icons";
 import { checkmarkCircleOutline } from "ionicons/icons";
-import Footer from "./Footer";
 
 export default function Contact() {
     
@@ -138,9 +137,6 @@ export default function Contact() {
           <button className="submit">SUBMIT</button>
         </form>
       </main>
-
-
-      <Footer />
 
     </div>
   );
