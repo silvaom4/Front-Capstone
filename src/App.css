@@ -56,3 +56,22 @@
 #typeWriter h3{
   margin: 20px;
 }
+#profileSect{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PPText{
+  margin-top: 150px;
+  }
+.PPText span{
+  color: white;
+}
+
+img{
+  width: 300px;
+  height: 200px;
+  
+}
