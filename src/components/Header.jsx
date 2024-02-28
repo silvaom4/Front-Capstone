@@ -85,21 +85,20 @@ function Header() {
               </div>
               <Nav className="ml-lg-auto" navbar>
                 <NavItem>
-                  <NavLink href="#pablo" onClick={e => e.preventDefault()}>
+                  <NavLink href="/forum" >
                     Fourm 
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#pablo" onClick={e => e.preventDefault()}>
+                  <NavLink href="/about" >
                     About Us
                   </NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav>
                   <NavLink
                     data-toggle="dropdown"
-                    href="#"
+                    href="/contact"
                     id="navbar-primary_dropdown_1"
-                    onClick={e => e.preventDefault()}
                     role="button"
                   >
                     Contact Us
