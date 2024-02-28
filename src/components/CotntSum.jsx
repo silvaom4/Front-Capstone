@@ -71,7 +71,7 @@ function CotntSum() {
       <form>
       {/* <input type="file" accept="application/pdf" onChange={extractText} /> */}
       <FileUpload />
-      <h1></h1>
+      <section id="InputText">
         <Input
             // id="exampleFormControlTextarea1"
             placeholder="Enter your text here"
@@ -82,6 +82,7 @@ function CotntSum() {
             bsSize="sm"
           />
         <Button color="primary" outline type="button" onClick={handleSubmit}>Submit</Button>
+        </section>
         <p dangerouslySetInnerHTML={sanitizeResponse(response)}></p>
       </form>
     </div>

@@ -19,7 +19,7 @@ const FileUpload = () => {
   });
 //TO DO : Customize and Style this Drag and Drop to Upload box as you want🧑‍💻😊
   return (
-    <div {...getRootProps()}>
+    <div id='UploadFileBox'{...getRootProps()}>
         <h1>
             File Upload
         </h1>
