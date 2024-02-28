@@ -5,19 +5,7 @@ import ContactCSS from "../assets/css/contact.css";
 import { IonIcon } from "@ionic/react";
 import { alertCircleOutline } from "ionicons/icons";
 import { checkmarkCircleOutline } from "ionicons/icons";
-
-
-import {
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Row,
-  Col,
-  Button,
-} from "reactstrap";
+import Footer from "./Footer";
 
 export default function Contact() {
     
@@ -151,6 +139,8 @@ export default function Contact() {
         </form>
       </main>
 
+
+      <Footer />
 
     </div>
   );
