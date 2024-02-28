@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
+import Typewriter from 'typewriter-effect';
 import OpenAI from "openai";
-import pdfToText from 'react-pdftotext';
 import sanitizeHtml from "sanitize-html";
 import { Button, Input } from "reactstrap";
 import FileUpload from "./FileUpload";
 import Header from './Header';
+import Footer from "./Footer";
 
 
 function CotntSum() {
@@ -13,7 +14,7 @@ function CotntSum() {
     const [response, setResponse] = useState("");
     const [text, setText] = useState("");
     const openai = new OpenAI({
-        apiKey: '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',
+        apiKey: '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',
         dangerouslyAllowBrowser: true,
     }); 
 
@@ -35,7 +36,6 @@ function CotntSum() {
         });
       
         setResponse(completion.choices[0].message.content);
-        console.log(userText)
     }
     
     function handleChange(event) {
@@ -51,40 +51,64 @@ function CotntSum() {
         }
     }, [submitted]);
 
-    function extractText(event) {
-      const file = event.target.files[0];
-      console.log(event.target.files);
-      if (file) {
-        pdfToText(file)
-          .then((text) => setText(text))
-          .catch((error) => console.error("Failed to extract text from pdf"));
-      }
-      }
+    // function extractText(event) {
+    //   const file = event.target.files[0];
+    //   console.log(event.target.files);
+    //   if (file) {
+    //     pdfToText(file)
+    //       .then((text) => setText(text))
+    //       .catch((error) => console.error("Failed to extract text from pdf"));
+    //   }
+    //   }
       const sanitizeResponse = (htmlContent) => {
         return { __html: sanitizeHtml(htmlContent) };
       };
+      const handleClear = (event) => {
+        event.preventDefault();
+        setUserText("");
+        setResponse("");
+        setText("");
+      };
+      let typeTopic;
+
+      new Typewriter(typeTopic, {
+        strings: ['Hello', 'World'],
+        autoStart: true,
+      });
       
-  
   return (
-    <div>
+    <div >
       <Header />
-      <form>
+      <form >
       {/* <input type="file" accept="application/pdf" onChange={extractText} /> */}
-      <FileUpload />
+      <section id='typeWriter'>
+      <h3 className="display-2 text-muted" >Content Breakdown & Summarization</h3>
+     <h3 >Recive a Broken Down Summary For Any <Typewriter
+  options={{
+    strings: ['Financial', 'Legal', 'Medical', 'Educational', 'Technical', 'Type Of'],
+    autoStart: true,
+    loop: true,
+  }}
+/> Document.</h3> 
+</section>
+
+      <FileUpload newFile={setText} />
       <section id="InputText">
         <Input
             // id="exampleFormControlTextarea1"
             placeholder="Enter your text here"
             maxLength={20000}
             onChange={handleChange}
-            rows="3"
+            rows="6"
             type="textarea"
             bsSize="sm"
           />
-        <Button color="primary" outline type="button" onClick={handleSubmit}>Submit</Button>
+          { response ? <Button color="primary" outline type="button" onClick={handleClear}>Clear</Button> :<Button color="primary" outline type="button" onClick={handleSubmit}>Submit</Button> }
         </section>
-        <p dangerouslySetInnerHTML={sanitizeResponse(response)}></p>
+        { response ? <p id="responceText" dangerouslySetInnerHTML={sanitizeResponse(response)}></p> : null}
+        
       </form>
+      <Footer />
     </div>
   )
 }
