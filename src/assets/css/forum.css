@@ -1,0 +1,49 @@
+.post {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+.forum_screen {
+    width: 65%;
+    height: 75vh;
+    overflow: scroll;
+    margin: auto;
+}
+
+.replies {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 30px;
+    background-color: gainsboro;
+    border: 1px solid black;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    width: 75%;
+    height: 10vh;
+    background-color: beige;
+    border: 1px solid black;
+}
+
+#post {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 75%;
+    height: 25vh;
+    background-color: beige;
+    border: 1px solid black;
+}
+
+.forum_bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
