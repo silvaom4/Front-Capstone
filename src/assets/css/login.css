@@ -1,0 +1,46 @@
+.login_input {
+    width: 100%;
+}
+
+.login_form {
+    width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.login_bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.register {
+    width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.regNames {
+    display: flex;
+}
+
+#regLastName {
+    margin-left: 50px;
+}
+
+.regBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.last_form {
+    margin-left: 50px;
+}
