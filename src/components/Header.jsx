@@ -19,35 +19,8 @@ import {
 function Header() {
   return (
     <div>
-       {/* <Navbar
-          className="navbar-horizontal navbar-dark bg-primary"
-          expand="lg"
-        >
-        <Container>
-    <NavbarBrand  href="#" onClick={e => e.preventDefault()}>
-              Header Text
-            </NavbarBrand>
-            <Row>
-                <Col>
-            <NavbarText active>
-              Header Text
-              </NavbarText>
-              </Col>
-              <Col>
-            <NavbarText active>
-              Header Text
-              </NavbarText>
-              </Col>
-              <Col>
-            <NavbarText active>
-              Header Text
-              </NavbarText>
-              </Col>
-              </Row>
-        </Container>
-        </Navbar> */}
         <Navbar
-          className="navbar-horizontal navbar-dark bg-primary mt-4"
+          className="navbar-horizontal navbar-dark bg-primary"
           expand="lg"
         >
           <Container>
