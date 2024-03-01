@@ -2,14 +2,41 @@
     width: 100%;
 }
 
-.login_form {
-    width: 500px;
-    margin: 30px auto;
-    padding: 20px;
+.login_form  {
+    width: 550px;
+    height: 500px;
+    margin: 70px auto;
+    padding: 40px;
+    padding-top: 80px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f2f2f2;
 }
+
+.login Input{
+display: relative;
+left: 3px;
+background: transparent;
+border: none;
+border-bottom: .5px solid #32325d;
+}
+.login Input:focus{
+    outline: none;
+    background: transparent;
+}
+
+.inputGroup{
+    background-color: transparent;
+    border: none;
+}
+.login section{
+    margin-bottom: 50px;
+}
+
+#login_form Input, Button{
+    margin: 50px 10px;
+}
+
 
 .login_bottom {
     display: flex;
@@ -19,21 +46,26 @@
 }
 
 .register {
-    width: 500px;
-    margin: 30px auto;
+    width: 40%;
+    margin: 50px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f2f2f2;
 }
 
-.regNames {
-    display: flex;
+.reglog div{
+    margin: 20px 0;
+
 }
 
-#regLastName {
-    margin-left: 50px;
+.regNames {
+    display: flex;
+    justify-content: space-evenly;
 }
+
+
+
 
 .regBottom {
     display: flex;
@@ -44,3 +76,4 @@
 .last_form {
     margin-left: 50px;
 }
+
