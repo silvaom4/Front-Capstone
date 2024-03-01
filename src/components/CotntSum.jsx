@@ -14,7 +14,7 @@ function CotntSum() {
     const [response, setResponse] = useState("");
     const [text, setText] = useState("");
     const openai = new OpenAI({
-        apiKey: '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',
+        apiKey: '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',
         dangerouslyAllowBrowser: true,
     }); 
 
