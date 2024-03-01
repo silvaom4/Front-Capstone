@@ -125,7 +125,7 @@ export default function Register() {
         .then(data => {
             console.log(data.message)
             if (data.message === 'User registered successfully') {
-                window.location.href = '/'
+                window.location.href = '/home'
             } else {
                 console.log(data.message)
             }
