@@ -1,9 +1,11 @@
 import React from 'react'
-import { Button, Input, FormGroup } from "reactstrap";
+import { Button, Input, FormGroup,InputGroup, InputGroupText } from "reactstrap";
 import { useEffect, useState } from 'react';
+import { IonIcon } from "@ionic/react";
+import { person } from "ionicons/icons";
+import Footer from './Footer';
 import '../assets/css/login.css'
-import Header from './Header';
-
+import B_L_Nav from './B_L_Nav';
 
 export default function Register() {
     const [validFirstName, setValidFirstName] = useState(false)
@@ -131,67 +133,111 @@ export default function Register() {
     }
   return (
     <div>
-        <Header />
+        <B_L_Nav />
     <div className='register'>
         
-      <form onSubmit={register}>
-        <div class='regNames'>
-      <FormGroup>
+      <form onSubmit={register} className='login reglog'>
+        <div >
+      <FormGroup class='regNames'>
+      <InputGroup>
+                <InputGroupText className='inputGroup'>
+                <IonIcon icon={person} />
+    </InputGroupText>
             <Input
                 name='regFirstName'
                 id="regFirstName"
                 placeholder="John"
                 type="text"
             />
-            <label htmlFor="regFirstName" className='firstName_label'>First Name</label>
-        </FormGroup>
-        
-        <FormGroup>
+            </InputGroup>
+            <InputGroup>
+            <InputGroupText className='inputGroup'>
+                <IonIcon icon={person} />
+    </InputGroupText>
             <Input
                 name='regLastName'
                 id="regLastName"
                 placeholder="Doe"
                 type="text"
             />
-            <label htmlFor="regLastName" className='last_form'>Last Name</label>
+            </InputGroup>
         </FormGroup>
+    
+        
+        {/* <FormGroup>
+        <span className='LastName'><InputGroup>
+                <InputGroupText className='inputGroup'>
+                <IonIcon icon={person} />
+    </InputGroupText>
+            <Input
+                name='regLastName'
+                id="regLastName"
+                placeholder="Doe"
+                type="text"
+            />
+            </InputGroup></span>
+        </FormGroup> */}
         </div>
+        <>
         <FormGroup>
+        <InputGroup>
+                <InputGroupText className='inputGroup'>
+                <IonIcon icon={person} />
+    </InputGroupText>
             <Input
                 name='regUsername'
                 id="regUsername"
-                placeholder="Johndoe123"
+                placeholder="Username"
                 type="text"
             />
-            <label htmlFor="regUsername">Username</label>
+            </InputGroup>
         </FormGroup>
+        </>
+        <>
         <FormGroup>
+        <InputGroup>
+                <InputGroupText className='inputGroup'>
+      @
+    </InputGroupText>
             <Input
                 name='regEmail'
                 id="regEmail"
                 placeholder="example@gmail.com"
                 type="email"
             />
-            <label htmlFor="regEmail">Email</label>
+            </InputGroup>
         </FormGroup>
+        </>
+        <>
         <FormGroup>
+        <InputGroup>
+                <InputGroupText className='inputGroup'>
+      🔒
+    </InputGroupText>
             <Input
                 name='regPassword'
                 id="regPassword"
                 placeholder="password"
                 type="password"
             />
-            <label htmlFor="regPassword">Password</label>
-        </FormGroup>
+            </InputGroup>
+     </FormGroup>
+     </>
+     <>
         <FormGroup>
+        <InputGroup>
+               <InputGroupText className='inputGroup'>
+      🔒
+    </InputGroupText>
             <Input
                 name='confirmPassword'
                 id="confirmPassword"
                 placeholder="password"
                 type="password"
             />
-            <label htmlFor="confirmPassword">Confirm Password</label>
+            </InputGroup>
         </FormGroup>
+        </>
         <div className='regBottom'>
         <Button color="primary" outline type='submit' id='regBtn'>
           Register
@@ -208,6 +254,7 @@ export default function Register() {
         
       </form>
     </div>
+    <Footer />
     </div>
   )
 }

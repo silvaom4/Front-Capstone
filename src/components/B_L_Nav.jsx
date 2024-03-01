@@ -26,7 +26,7 @@ function Header() {
         >
           <Container>
             {/* <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}> */}
-              <NavLink href="/"><h2>iSummarize</h2></NavLink>
+            <NavLink href="/"><h2>iSummarize</h2></NavLink>
             {/* </NavbarBrand> */}
             <button
               className="navbar-toggler"
@@ -40,10 +40,10 @@ function Header() {
             <UncontrolledCollapse navbar toggler="#navbar-primary">
               <div className="navbar-collapse-header">
                 <Row>
-                  <Col className="collapse-brand" xs="6">
-                    <hi>Close</hi>
+                  <Col className="collapse-brand" >
+                    <p>Close</p>
                   </Col>
-                  <Col className="collapse-close" xs="6">
+                  <Col className="collapse-close" >
                     <button
                       className="navbar-toggler"
                       data-target="#navbar-primary"
@@ -59,11 +59,6 @@ function Header() {
               </div>
               <Nav className="ml-lg-auto" navbar>
                 <NavItem>
-                  <NavLink href="/forum" >
-                    Fourm 
-                  </NavLink>
-                </NavItem>
-                <NavItem>
                   <NavLink href="/about" >
                     About Us
                   </NavLink>
@@ -71,11 +66,11 @@ function Header() {
                 <UncontrolledDropdown nav>
                   <NavLink
                     data-toggle="dropdown"
-                    href="/contact"
+                    href="/login"
                     id="navbar-primary_dropdown_1"
                     role="button"
                   >
-                    Contact Us
+                    Login/Signup
                   </NavLink>
                   <DropdownMenu
                     right
