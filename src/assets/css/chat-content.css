@@ -1,0 +1,268 @@
+.modal-container {
+    position: fixed;
+    z-index: 2;
+    right: 5px;
+    top: 260px;
+    margin: 30px;
+    box-shadow: 1px 1px 5px 1px;
+    border: solid 1px rgb(255, 250, 241);
+    padding : 30px 1px;
+    height: 60vh;
+    width: 50vw;
+    max-width: 310px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.open-modal {
+    animation: chatBotButtonRotate 5s infinite;
+    position: fixed;
+    right: 55px;
+    top: 550px;
+    z-index: 1;
+}
+
+
+
+.close-modal {
+    position: fixed;
+    right: 45px;
+    top: 285px;
+    z-index: 3;
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+
+}
+.open-modal {
+    border: none;
+    background-color: transparent;
+    font-size: 40px;
+}
+
+
+.open-modal:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+}
+.chatbot-header {
+    padding: 0 15px;
+    margin-top: -10px;
+}
+
+.circle-check {
+    color: rgb(10, 187, 19);
+    font-size: 25px;
+
+}
+
+
+.chat-field {
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 5px;
+    height: 75%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scroll-margin-bottom: auto;
+    overflow-y: scroll;
+    background-color: rgb(233, 243, 251);
+}
+
+
+.submit-field {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#chat-input {
+    /* width: 269.5px; */
+    width: 49.9vw;
+    max-width: 310px;
+    padding: 10px 0;
+
+}
+
+
+
+.chat-submit {
+    background-color: #5e72e4;
+    color: black;
+    margin-top: 1px;
+    padding: 10px;
+    border: 5px;
+    border: none;
+    /* width: 269px; */
+    width: 49.9vw;
+    max-width: 310px;
+    border-radius: 1px;
+}
+
+
+.user-input {
+    align-items: right;
+    background-color: rgb(173, 181, 230);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    align-self: flex-end;
+    max-width: 70%;
+}
+
+.chat-answer {
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.icons-div {
+    display: block;
+    padding-right: 5px;
+}
+
+.time-date {
+    padding-left: 5px;
+}
+
+@keyframes chatBotButtonRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    
+}
+
+
+/* Media Queries Start Here  */
+
+@media screen and (max-width: 400px) {
+
+    .chatbot-header {
+        font-size: 20px;
+    }
+
+
+    .modal-container {
+    
+        translate: (50%, 50%);
+        top: 190px;
+        margin: 30px;
+        height: 70vh;
+        width: 90vw;
+        max-width: 310px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+    
+    }
+    
+    .open-modal {
+        animation: chatBotButtonRotate 5s infinite;
+        position: fixed;
+        right: 35px;
+        top: 550px;
+        z-index: 1;
+    }
+    
+    
+    
+    .close-modal {
+        position: fixed;
+        right: 45px;
+        top: 210px;
+        z-index: 3;
+        border: none;
+        background-color: transparent;
+        font-size: 30px;
+    
+    }
+
+    #chat-input {
+        /* width: 269.5px; */
+        width: 90vw;
+        max-width: 310px;
+        padding: 10px 0;
+    
+    }
+    
+    
+    
+    .chat-submit {
+        border: none;
+        width: 90vw;
+        max-width: 310px;
+        border-radius: 1px;
+    }
+    
+}
+    
+
+
+@media screen and (min-width: 401px) and (max-width: 768px) {
+    .chatbot-header {
+        font-size: 25px;
+    }
+    .modal-container {
+    
+        translate: (50%, 50%);
+        top: 190px;
+        margin: 30px;
+        height: 70vh;
+        width: 90vw;
+        max-width: 310px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+    
+    }
+    
+    .open-modal {
+        animation: chatBotButtonRotate 5s infinite;
+        position: fixed;
+        right: 35px;
+        top: 550px;
+        z-index: 1;
+    }
+    
+    
+    
+    .close-modal {
+        position: fixed;
+        right: 45px;
+        top: 210px;
+        z-index: 3;
+        border: none;
+        background-color: transparent;
+        font-size: 30px;
+    
+    }
+
+    #chat-input {
+        /* width: 269.5px; */
+        width: 90vw;
+        max-width: 310px;
+        padding: 10px 0;
+    
+    }
+    
+    
+    
+    .chat-submit {
+        border: none;
+        width: 90vw;
+        max-width: 310px;
+        border-radius: 1px;
+    }
+    
+}
+    
+
+
+

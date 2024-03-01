@@ -6,6 +6,7 @@ import { Button, Input } from "reactstrap";
 import FileUpload from "./FileUpload";
 import Header from './Header';
 import Footer from "./Footer";
+import Chatbot from "./chatbot";
 
 
 function CotntSum() {
@@ -106,8 +107,9 @@ function CotntSum() {
           { response ? <Button color="primary" outline type="button" onClick={handleClear}>Clear</Button> :<Button color="primary" outline type="button" onClick={handleSubmit}>Submit</Button> }
         </section>
         { response ? <p id="responceText" dangerouslySetInnerHTML={sanitizeResponse(response)}></p> : null}
-        
+       
       </form>
+       <Chatbot />
       <Footer />
     </div>
   )
