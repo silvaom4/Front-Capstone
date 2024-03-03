@@ -75,3 +75,15 @@ img{
   height: 200px;
   
 }
+#Loading{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 20px;
+}
+#fileName{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 20px;
+}
