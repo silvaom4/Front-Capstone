@@ -11,6 +11,7 @@ import Forum from './components/Forum';
 import AboutUs from './Pages/AboutUs';
 import Contact from './components/Contact';
 import B_L_Home from './components/B_L_Home';
+import ErrorPage from './components/404';
 import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
 
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/forum" element={<Forum />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<AboutUs />}></Route>
+            <Route path="/*" element={<ErrorPage />}></Route>
 
 
           </Routes>
