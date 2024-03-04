@@ -7,6 +7,7 @@ import {RingLoader} from 'react-spinners';
 import FileUpload from "./FileUpload";
 import B_L_Nav from './B_L_Nav';
 import Footer from "./Footer";
+import Chatbot from "./chatbot";
 
 
 function CotntSum() {
@@ -121,6 +122,7 @@ function CotntSum() {
         { response ? <p id="responceText" dangerouslySetInnerHTML={sanitizeResponse(response)}></p> : null}
         
       </form>
+      <Chatbot />
       <Footer />
     </div>
   )
