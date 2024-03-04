@@ -1,6 +1,9 @@
 import React from 'react'
-import { Button, Input, FormGroup } from "reactstrap";
+import { Button, Input, FormGroup, InputGroup,InputGroupText, } from "reactstrap";
 import '../assets/css/login.css'
+// import Header from './Header';
+import B_L_Nav from './B_L_Nav';
+import Footer from './Footer';
 
 export default function Login() {
     const login = (e) => {
@@ -29,32 +32,46 @@ export default function Login() {
                 localStorage.setItem('Name', data.user.FirstName);
                 localStorage.setItem('Admin', data.user.isAdmin);
                 console.log(data.message)
-                window.location.href = '/';
+                window.location.href = '/home';
             }
             
         })
     }
   return (
+    <>
+      <B_L_Nav />
     <div>
     <div className='login_form'>
         <div className='login_input'>
-        <form onSubmit={login}>
+        <form onSubmit={login} className='login'>
             {/* <input placeholder='John@example.com' id='login_email' type='text'></input> */}
             <div>
-            <FormGroup>
-                <Input
-                  id="login_email"
-                  placeholder="name@example.com"
-                  type="email"
-                />
-              </FormGroup>
+              <section>
+            <FormGroup floating >
+  <InputGroup>
+    <InputGroupText className='inputGroup'>@</InputGroupText >
+    <Input
+      id="login_email"
+      placeholder="example@example.com"
+      type="email"
+    />
+  </InputGroup>
+</FormGroup>
+</section>
+<section>
               <FormGroup>
+                <InputGroup>
+                <InputGroupText className='inputGroup'>
+      🔒
+    </InputGroupText>
                 <Input
                   id="login_password"
                   placeholder="password"
                   type="password"
                 />
+              </InputGroup>
               </FormGroup>
+              </section>
               </div>
               <div className='login_bottom'>
             <Button color="primary" outline type='submit'>
@@ -65,6 +82,8 @@ export default function Login() {
         </form>
         </div>
     </div>
-    </div>  
+    </div> 
+    <Footer />
+    </> 
   )
 }

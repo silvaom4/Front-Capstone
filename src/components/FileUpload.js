@@ -4,10 +4,11 @@ import pdfToText from 'react-pdftotext';
 import { Button } from "reactstrap";
 
 
-const FileUpload = ( {newFile} ) => {
+const FileUpload = ( {newFile, newFileName} ) => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
+      newFileName(acceptedFiles[0].name)
       if (acceptedFiles) {
         pdfToText(acceptedFiles[0])
           .then((text) =>{

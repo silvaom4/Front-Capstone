@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import Header from "./Header";
 import ContactCSS from "../assets/css/contact.css";
-
+import Footer from "./Footer";
 import { IonIcon } from "@ionic/react";
 import { alertCircleOutline } from "ionicons/icons";
 import { checkmarkCircleOutline } from "ionicons/icons";
+import { person } from "ionicons/icons";
+import { mail } from "ionicons/icons";
 
 
 import {
@@ -17,6 +19,7 @@ import {
   Row,
   Col,
   Button,
+  Label
 } from "reactstrap";
 
 export default function Contact() {
@@ -83,17 +86,21 @@ export default function Contact() {
 
       <main>
         <h2 className="contact-h2">Send Us a Message</h2>
-        <form onSubmit={handleSubmitButton} id="form" className="contact-form">
+        <Form onSubmit={handleSubmitButton} id="form" className="contact-form">
           {/* <div class="form-divs success">  */}
           <div className={`form-divs ${valid}`}>
-            <label htmlFor="first-name">First Name</label>
-            <input
+            {/* <Label htmlFor="first-name">First Name</Label> */}
+            <InputGroup>
+            <InputGroupText>  <IonIcon icon={person} />
+ </InputGroupText>
+            <Input
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               type="text"
               id="first-name"
               placeholder="Enter your first name"
             />
+            </InputGroup>
             <span className="alert-icon">
               <IonIcon icon={alertCircleOutline} />
             </span>
@@ -105,14 +112,17 @@ export default function Contact() {
           </div>
           {/* <div class="form-divs error"> */}
           <div className={`form-divs ${validLast}`}>
-            <label htmlFor="last-name">Last Name</label>
-            <input
+            <InputGroup>
+            <InputGroupText>  <IonIcon icon={person} />
+ </InputGroupText>
+            <Input
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               type="text"
               id="last-name"
               placeholder="Enter your last name"
             />
+            </InputGroup>
             <span className="alert-icon">
               <IonIcon icon={alertCircleOutline} />
             </span>
@@ -123,11 +133,13 @@ export default function Contact() {
           </div>
 
           <div className={`form-divs ${validEmail}`}>
-            <label htmlFor="email">Email</label>
-            <input 
+          <InputGroup>
+    <InputGroupText>@</InputGroupText>
+            <Input 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email" id="email" placeholder="Enter you email" />
+           </InputGroup>
             <span className="alert-icon">
               <IonIcon icon={alertCircleOutline} />
             </span>
@@ -137,8 +149,10 @@ export default function Contact() {
             <small>{emailMessage}</small>
           </div>
           <div className="form-divs">
-            <label htmlFor="message">Message</label>
-            <input type="text" id="message" placeholder="Enter your message" />
+            <InputGroup>
+    <InputGroupText><IonIcon icon={mail} /> </InputGroupText>
+            <Input type="text" id="message" rows='3' placeholder="Enter your message" />
+            </InputGroup>
             <span className="alert-icon">
               <IonIcon icon={alertCircleOutline} />
             </span>
@@ -147,11 +161,11 @@ export default function Contact() {
             </span>
             <small>Error Message</small>
           </div>
-          <button className="submit">SUBMIT</button>
-        </form>
+          <Button color='primary' outline className="submit">SUBMIT</Button>
+        </Form>
       </main>
 
-
+<Footer />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import sanitizeHtml from "sanitize-html";
 import { Button, Input } from "reactstrap";
 import {RingLoader} from 'react-spinners';
 import FileUpload from "./FileUpload";
-import Header from './Header';
+import B_L_Nav from './B_L_Nav';
 import Footer from "./Footer";
 
 
@@ -85,7 +85,7 @@ function CotntSum() {
       
   return (
     <div >
-      <Header />
+      <B_L_Nav />
       <form >
       {/* <input type="file" accept="application/pdf" onChange={extractText} /> */}
       <section id='typeWriter'>
