@@ -15,7 +15,8 @@ export default function ErrorPage() {
 
       <h1 className="error-h1">Oops!</h1>
       {/* <img src={ErrorImage1} alt="error" className='error-img'/> */}
-      <img src={ErrorImage2} alt="error" className="error-img" />
+      
+      <img src={ErrorImage2} alt="error" className="error-img glow-border" />
       {/* <img src={ErrorImage3} alt="error" className='error-img'/> */}
       <p className="error-p">Seems like you are lost, lets get you back!</p>
       <button className="error-btn" href="/contact">

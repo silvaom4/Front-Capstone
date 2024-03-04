@@ -35,7 +35,7 @@ export default function Chatbot() {
       ]);
       setChatHistoryData((prevChatContent) => [...prevChatContent, chatInput]);
       const response = await fetch(
-        `/chat?question=${chatInput}&history=${JSON.stringify(
+        `http://localhost:4000/chat?question=${chatInput}&history=${JSON.stringify(
           chatHistoryData
         )}`,
         {

@@ -69,10 +69,10 @@ small {
 
 
 .form-divs.success input {
-    border: 2px solid green;
+    border-bottom: 2px solid green;
 }
 .error input {
-    border: 2px solid red;
+    border-bottom: 2px solid red;
 }
 
 
@@ -98,13 +98,13 @@ small {
 .success small {
     color: green;
     visibility: visible;
-    text-align: left;
+    margin-left: 45px;
 }
 
 .error small {
     color: red;
     visibility: visible;
-    text-align: left;
+    margin-left: 45px;
 }
 
 @media screen and (max-width: 400px) {
@@ -184,10 +184,14 @@ small {
        width: 210px;
         height: 25px;
     }
-    .alert-icon,
+    .alert-icon {
+        right: 5px;
+        bottom: 40px;
+        font-size: 20px;
+    }
     .check-icon {
-        right: 15px;
-        bottom: 38px;
+        right: 5px;
+        bottom: 58px;
         font-size: 20px;
 }
 
