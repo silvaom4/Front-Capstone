@@ -125,6 +125,10 @@ export default function Register() {
         .then(data => {
             console.log(data.message)
             if (data.message === 'User registered successfully') {
+                localStorage.setItem('ID', data.user.UserID);
+                localStorage.setItem('Username', data.user.Username);
+                localStorage.setItem('Name', data.user.FirstName);
+                localStorage.setItem('Admin', data.user.isAdmin);
                 window.location.href = '/home'
             } else {
                 console.log(data.message)
