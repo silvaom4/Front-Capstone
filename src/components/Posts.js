@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 
 export default function Posts(props) {
     const [replies, setReplies] = useState([{}])
-    const loadReplies = () => {
-        fetch('/api/forum/replies', {
+    const loadReplies = async() => {
+        await fetch('/api/forum/replies', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export default function Posts(props) {
     }
     useEffect(() => {
         loadReplies();
-    },[])
+    },[document.getElementById(props.forumID)]);
   return (
     <div>
         <div className='post'>
@@ -57,6 +57,7 @@ export default function Posts(props) {
             replies.map((reply) => {
                 return (
                     <div className='replies'>
+                        <p>{reply.Username}</p>
                         <p>{reply.Content}</p>
                     </div>
                 )

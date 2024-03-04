@@ -53,6 +53,14 @@ export default function Forum() {
         post.addEventListener('input', (e) => {
             setCurrentLength(post.value.length)
         })
+
+        if (localStorage.getItem('ID') === null) {
+            document.getElementById('header').disabled = true
+            document.getElementById('post').disabled = true
+            document.getElementById('header').placeholder = 'Login to post'
+            document.getElementById('post').placeholder = 'Login to post'
+            document.getElementById('post_btn').disabled = true
+        }
     },[]);
   return (
     <div>
@@ -73,7 +81,7 @@ export default function Forum() {
       <input maxLength={"240"} id='post' placeholder='Enter Message'/>
       <div className='forum_bottom'>
         <p>{currentLength}/240</p>
-        <button type='submit'>Submit</button>
+        <button type='submit' id='post_btn'>Submit</button>
         </div>
         </form>
         <Chatbot />
