@@ -39,18 +39,20 @@ export default function Profile() {
             body: JSON.stringify({
                 userID: localStorage.getItem('ID'),
                 password: document.getElementById('password').value,
+                username: localStorage.getItem('Username'),
                 newUsername: newUsername
             })
         }).then(res => res.json())
         .then(data => {
-            if (data.message === 'Password Incorrect') {
-                document.getElementById('alertMsg').innerHTML = 'Password incorrect'
+            if (data.message !== 'Username changed successfully') {
+                document.getElementById('alertMsg').innerHTML = data.message;
                 document.getElementById('alertMsg').style.color = 'red'
                 return
             } else {
                 console.log(data.message)
                 document.getElementById('alertMsg').innerHTML = 'Username changed successfully'
                 document.getElementById('alertMsg').style.color = 'green'
+                localStorage.setItem('Username', newUsername)
                 window.location.href = '/profile'
             }
         })
