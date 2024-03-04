@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button, Card, Container, Row, Col } from "reactstrap";
 import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Chatbot from '../components/chatbot';
 
 // require('../images/HeadShot.png');
 
@@ -121,6 +123,8 @@ function AboutUs() {
             </Container>
           </section>
         </main>
+        <Chatbot />
+        <Footer />
     </div>
   )
 }

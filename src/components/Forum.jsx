@@ -2,6 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Posts from './Posts';
 import '../assets/css/forum.css'
+import Header from './Header';
+import Chatbot from './chatbot';
+import Footer from './Footer';
 
 export default function Forum() {
     const [currentLength , setCurrentLength] = useState(0)
@@ -53,6 +56,7 @@ export default function Forum() {
     },[]);
   return (
     <div>
+        <Header />
         <div className='forum_screen'>
         {(typeof forumPosts[0] === 'undefined') ? 
         <p>No posts</p> 
@@ -72,6 +76,8 @@ export default function Forum() {
         <button type='submit'>Submit</button>
         </div>
         </form>
+        <Chatbot />
+        <Footer />
     </div>
   )
 }

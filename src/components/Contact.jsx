@@ -7,6 +7,7 @@ import { alertCircleOutline } from "ionicons/icons";
 import { checkmarkCircleOutline } from "ionicons/icons";
 import { person } from "ionicons/icons";
 import { mail } from "ionicons/icons";
+import Chatbot from "./chatbot";
 
 
 import {
@@ -164,6 +165,8 @@ export default function Contact() {
           <Button color='primary' outline className="submit">SUBMIT</Button>
         </Form>
       </main>
+      <Chatbot />
+
 
 
     </div>
