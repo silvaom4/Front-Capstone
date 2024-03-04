@@ -49,6 +49,7 @@
   ],
   "dependencies": {
     "@ionic/react": "^7.7.3",
+    "bcrypt": "^5.1.1",
     "bootstrap": "4.6.2",
     "classnames": "2.3.2",
     "cors": "^2.8.5",

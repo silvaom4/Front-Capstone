@@ -3,6 +3,11 @@ import { useState, useEffect } from 'react'
 
 export default function Posts(props) {
     const [replies, setReplies] = useState([{}])
+    const [replyDate, setReplyDate] = useState([{}])
+    const date = new Date(props.dateAdded).toLocaleString()
+    const repliesDate = new Date(replyDate).toLocaleString()
+    const isAdmin = props.isAdmin === 1 ? '• Admin' : '';
+
     const loadReplies = async() => {
         await fetch('/api/forum/replies', {
             method: 'POST',
@@ -14,8 +19,8 @@ export default function Posts(props) {
             })
         }).then(res => res.json())
         .then(data => {
-            console.log(data)
             setReplies(data.replies)
+            setReplyDate(data.replies.dateAdded)
         })
     }
 
@@ -36,7 +41,6 @@ export default function Posts(props) {
             })
         }).then(res => res.json())
         .then(data => {
-            console.log(data.message)
             loadReplies();
         })
     }
@@ -47,7 +51,7 @@ export default function Posts(props) {
     <div>
         <div className='post'>
         <h1>{props.HeaderContent}</h1>
-        <p>{props.Username}</p>
+        <p>{props.Username} {isAdmin} {date}</p>
         <p>{props.Content}</p>
         </div>
         <div>
@@ -57,7 +61,7 @@ export default function Posts(props) {
             replies.map((reply) => {
                 return (
                     <div className='replies'>
-                        <p>{reply.Username}</p>
+                        <p>{reply.Username} {reply.isAdmin === 1 ? '• Admin' : ''} {new Date(reply.dateAdded).toLocaleString()}</p>
                         <p>{reply.Content}</p>
                     </div>
                 )

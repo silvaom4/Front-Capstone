@@ -17,6 +17,10 @@ import {
   } from "reactstrap";
 
 function Header() {
+  const loginStatus = localStorage.getItem('ID') === null ? 'Login/Register' : localStorage.getItem('Username')
+  const isAdmin = localStorage.Admin == '1' ? '• Admin' : '';
+  const loginStatusRoute = localStorage.getItem('ID') === null ? '/login' : '/profile'
+  
   return (
     <div>
         <Navbar
@@ -68,14 +72,19 @@ function Header() {
                     About Us
                   </NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink href="/contact" >
+                    Contact Us
+                  </NavLink>
+                </NavItem>
                 <UncontrolledDropdown nav>
                   <NavLink
                     data-toggle="dropdown"
-                    href="/contact"
+                    href={loginStatusRoute}
                     id="navbar-primary_dropdown_1"
                     role="button"
                   >
-                    Contact Us
+                    {loginStatus} {isAdmin}
                   </NavLink>
                   <DropdownMenu
                     right
