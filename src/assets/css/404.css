@@ -1,0 +1,101 @@
+.error-h1 {
+    font-size: 3em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #32325d;
+
+}
+
+.error-p {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #32325d;
+}
+
+.error-img {
+    display: flex;
+    margin: 0 auto;
+    height: 50vh;
+    width: 45vw;
+    border-radius: 2px;
+}
+
+.glow-border {
+    border: 5px solid #8965e0;
+    animation: blink 5s infinite;
+
+}
+
+@keyframes blink {
+    0% {
+        border-color: #ff0000;
+    }
+    25% {
+        border-color: #ff7300;
+    }
+    40% {
+        border-color: #fffb00;
+    }
+    70% {
+        border-color: #48ff00;
+    }
+    
+    80% {
+        border-color: #00ffd5;
+    }
+    92% {
+        border-color: #002bff;
+    }
+    100% {
+        border-color: #ff7300;
+    }
+
+
+}
+
+.error-btn {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    width: 20vw;
+    background-color: #8965e0;
+    color: #32325d;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.error-btn a {
+    text-decoration: none;
+    color: #32325d;
+
+}
+
+.error-btn:hover {
+    background-color: white;
+    border: #8965e0 2px solid;
+    color: black;
+    transition: .45s;
+}
+
+@media screen and (max-width: 400px) {
+    .error-img {
+        height: 50vh;
+        width: 80vw;
+    }
+    .error-btn {
+        width: 80vw;
+        padding: 5px;
+        font-size: 1.2em;
+        margin-top: 0;
+        margin-bottom: 0;
+    }   
+}

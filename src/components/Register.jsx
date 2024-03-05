@@ -58,6 +58,12 @@ export default function Register() {
                     if (target.value.length <= 0) {
                         target.style.border = '1px solid red'
                         setValidUsername(false)
+                    } else if (target.value.length < 4) {
+                        target.style.border = '1px solid red'
+                        setValidUsername(false)
+                    } else if (target.value.length > 20) {
+                        target.style.border = '1px solid red'
+                        setValidUsername(false)
                     }
                     else {
                         target.style.border = '1px solid green'
@@ -125,9 +131,17 @@ export default function Register() {
         .then(data => {
             console.log(data.message)
             if (data.message === 'User registered successfully') {
-                window.location.href = '/'
+                document.getElementById('regStatus').innerHTML = data.message
+                document.getElementById('regStatus').style.color = 'green'
+                localStorage.clear();
+                localStorage.setItem('ID', data.user.UserID);
+                localStorage.setItem('Username', data.user.Username);
+                localStorage.setItem('Name', data.user.FirstName);
+                localStorage.setItem('Admin', data.user.isAdmin);
+                window.location.href = '/home'
             } else {
-                console.log(data.message)
+                document.getElementById('regStatus').innerHTML = data.message
+                document.getElementById('regStatus').style.color = 'red'
             }
         })
     }
@@ -238,6 +252,7 @@ export default function Register() {
             </InputGroup>
         </FormGroup>
         </>
+        <p id='regStatus'></p>
         <div className='regBottom'>
         <Button color="primary" outline type='submit' id='regBtn'>
           Register

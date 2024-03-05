@@ -22,17 +22,21 @@ export default function Login() {
             })
         }).then(res => res.json())
         .then(data => {
-            if (data.user === undefined) {
-                console.log(data.message)
+            if (data.message !== 'User logged in successfully') {
+                document.querySelector('.loginStatus').innerHTML = data.message;
+                document.querySelector('.loginStatus').style.color = 'red';
                 return
             } else {
+                document.querySelector('.loginStatus').innerHTML = 'Login Successful';
+                document.querySelector('.loginStatus').style.color = 'green';
+
                 localStorage.clear();
                 localStorage.setItem('ID', data.user.UserID);
                 localStorage.setItem('Username', data.user.Username);
                 localStorage.setItem('Name', data.user.FirstName);
                 localStorage.setItem('Admin', data.user.isAdmin);
-                console.log(data.message)
-                window.location.href = '/';
+                
+                window.location.href = '/home';
             }
             
         })
@@ -74,6 +78,7 @@ export default function Login() {
               </section>
               </div>
               <div className='login_bottom'>
+                <p className='loginStatus'></p>
             <Button color="primary" outline type='submit'>
           Login
         </Button>
