@@ -92,7 +92,7 @@ export default function Contact() {
           <div className={`form-divs ${valid}`}>
             {/* <Label htmlFor="first-name">First Name</Label> */}
             <InputGroup>
-            <InputGroupText>  <IonIcon icon={person} />
+            <InputGroupText className='inputGroup'>  <IonIcon icon={person} />
  </InputGroupText>
             <Input
               value={firstName}
@@ -114,7 +114,7 @@ export default function Contact() {
           {/* <div class="form-divs error"> */}
           <div className={`form-divs ${validLast}`}>
             <InputGroup>
-            <InputGroupText>  <IonIcon icon={person} />
+            <InputGroupText className='inputGroup'>  <IonIcon icon={person} />
  </InputGroupText>
             <Input
               value={lastName}
@@ -135,7 +135,7 @@ export default function Contact() {
 
           <div className={`form-divs ${validEmail}`}>
           <InputGroup>
-    <InputGroupText>@</InputGroupText>
+    <InputGroupText className='inputGroup'>@</InputGroupText>
             <Input 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -151,7 +151,7 @@ export default function Contact() {
           </div>
           <div className="form-divs">
             <InputGroup>
-    <InputGroupText><IonIcon icon={mail} /> </InputGroupText>
+    <InputGroupText className='inputGroup' ><IonIcon icon={mail} /> </InputGroupText>
             <Input type="text" id="message" rows='3' placeholder="Enter your message" />
             </InputGroup>
             <span className="alert-icon">
@@ -168,7 +168,7 @@ export default function Contact() {
       <Chatbot />
 
 
-
+  <Footer />
     </div>
   );
 }
