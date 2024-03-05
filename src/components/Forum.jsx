@@ -5,6 +5,7 @@ import '../assets/css/forum.css'
 import Header from './Header';
 import Chatbot from './chatbot';
 import Footer from './Footer';
+import {Input} from 'reactstrap'
 
 export default function Forum() {
     const [currentLength , setCurrentLength] = useState(0)
@@ -77,11 +78,13 @@ export default function Forum() {
         </div>
 
         <form onSubmit={postForum}>
-        <input maxLength={"100"} id='header' placeholder='Enter Topic'/>
-      <input maxLength={"499"} id='post' placeholder='Enter Message'/>
+        <div id='create_post'>
+        <Input maxLength={"100"} id='header' placeholder='Enter Topic'/>
+      <Input maxLength={"499"} id='post' rows='3' placeholder='Enter Message'/>
       <div className='forum_bottom'>
         <p>{currentLength}/499</p>
         <button type='submit' id='post_btn'>Submit</button>
+        </div>
         </div>
         </form>
         <Chatbot />

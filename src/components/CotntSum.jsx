@@ -27,12 +27,13 @@ function CotntSum() {
       const content = text ? text : userText;
 
     const response =  fetch(
-      `http://localhost:5000/summary?content=${content}`,
+      `http://localhost:4000/summary?content=${content}`,
       {
         method: "POST",
       }
     ).then((res) => res.json())
-    .then((data) => {setResponse(data);
+    .then((data) => {setResponse(data.content);
+
       setLoading(false);
     });
   }
