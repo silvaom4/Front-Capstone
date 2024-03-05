@@ -80,9 +80,9 @@ export default function Forum() {
         <form onSubmit={postForum}>
         <div id='create_post'>
         <Input maxLength={"100"} id='header' placeholder='Enter Topic'/>
-      <Input maxLength={"240"} id='post' rows='3' placeholder='Enter Message'/>
+      <Input maxLength={"499"} id='post' rows='3' placeholder='Enter Message'/>
       <div className='forum_bottom'>
-        <p>{currentLength}/240</p>
+        <p>{currentLength}/499</p>
         <button type='submit' id='post_btn'>Submit</button>
         </div>
         </div>
