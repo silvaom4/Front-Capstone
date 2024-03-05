@@ -78,9 +78,9 @@ export default function Forum() {
 
         <form onSubmit={postForum}>
         <input maxLength={"100"} id='header' placeholder='Enter Topic'/>
-      <input maxLength={"240"} id='post' placeholder='Enter Message'/>
+      <input maxLength={"499"} id='post' placeholder='Enter Message'/>
       <div className='forum_bottom'>
-        <p>{currentLength}/240</p>
+        <p>{currentLength}/499</p>
         <button type='submit' id='post_btn'>Submit</button>
         </div>
         </form>
