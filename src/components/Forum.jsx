@@ -132,12 +132,14 @@ export default function Forum() {
         <div id='create_post'>
         <form id='post_form'>
         <Input maxLength={"100"} id='header' placeholder='Enter Topic'/>
+
       <Input maxLength={"240"} id='post' rows='3' placeholder='Enter Message'/>
       </form>
       {/* </InputGroup> */}
       <div className='forum_bottom'>
         <p>{currentLength}/240</p>
         <Button color='primary' outline type='submit' onClick={toggleModal} id='post_btn'>Submit</Button>
+
         </div>
         </div>
         <div className="modal-footer">

@@ -18,6 +18,7 @@ import {Input, Button,
 
 export default function Profile() {
     const [profile, setProfile] = useState([{}])
+
     const [exampleModal, setExampleModal] = useState(false);
     const [passwordModal, setpasswordModle] = useState(false);
 
@@ -28,6 +29,9 @@ export default function Profile() {
     const togglePassModal = () => {
       setpasswordModle(!passwordModal);
   };
+
+
+    const [summaries, setSummaries] = useState([{}])
 
     useEffect(() => {
         fetch('/api/profile', {
@@ -41,6 +45,21 @@ export default function Profile() {
         }).then(res => res.json())
         .then(data => {
             setProfile(data.profile)
+        })
+
+        fetch('/api/profile/loadSummaries', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userID: localStorage.getItem('ID')
+            })
+        }).then(res => res.json())
+        .then(data => {
+            setSummaries(data.summaries)
+            console.log(data)
+
         })
     },[]);
 
@@ -202,6 +221,7 @@ export default function Profile() {
           </div>
       </Modal>
 
+
       <Button
         color="primary"
         type="button"
@@ -256,6 +276,7 @@ export default function Profile() {
                
                
                 <Button color='primary' outline onClick={logout}>logout</Button>
+
             </div>
         }
         </div>
