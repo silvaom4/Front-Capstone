@@ -1,9 +1,34 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Header from './Header'
+import Footer from './Footer'
+import {Input, Button, 
+    Card,
+    CardHeader,
+    CardBody,
+    FormGroup,
+    Form,
+    InputGroupAddon,
+    InputGroupText,
+    InputGroup,
+    Modal,
+    Row,
+    Col
+  } from 'reactstrap'
 
 export default function Profile() {
     const [profile, setProfile] = useState([{}])
+    const [exampleModal, setExampleModal] = useState(false);
+    const [passwordModal, setpasswordModle] = useState(false);
+
+    
+    const toggleModal = () => {
+        setExampleModal(!exampleModal);
+    };
+    const togglePassModal = () => {
+      setpasswordModle(!passwordModal);
+  };
+
     useEffect(() => {
         fetch('/api/profile', {
             method: 'POST',
@@ -105,6 +130,9 @@ export default function Profile() {
   return (
     <div>
         <Header />
+        <section>
+          <h1 className='text-center'>Settings</h1>
+        </section>
         <div className='profile'>
         {(typeof profile[0] === 'undefined') ?
         <div>
@@ -124,8 +152,36 @@ export default function Profile() {
 
 
                 </form> */}
-
-                <form onSubmit={changeUserName}>
+                <Button
+        color="primary"
+        type="button"
+        onClick={toggleModal}
+        outline
+      >
+        Change Username
+      </Button>
+      {/* Modal */}
+      <Modal
+        className="modal-dialog-centered"
+        isOpen={exampleModal}
+        toggle={toggleModal}
+      >
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLabel">
+            Change Username
+          </h5>
+          <button
+            aria-label="Close"
+            className="close"
+            data-dismiss="modal"
+            type="button"
+            onClick={toggleModal}
+          >
+            <span aria-hidden={true}>×</span>
+          </button>
+        </div>
+        <div className="modal-body">
+        <form onSubmit={changeUserName}>
                     <label htmlFor='newUsername'>New Username</label>
                     <input type='text' id='newUsername' placeholder='New Username'></input>
                     <label htmlFor='password'>Password</label>
@@ -133,22 +189,77 @@ export default function Profile() {
                     <p id='alertMsg'></p>
                     <button type='submit'>Change Username</button>
                 </form>
+        </div>
+        <div className="modal-footer">
+          <Button
+            color="secondary"
+            data-dismiss="modal"
+            type="button"
+            onClick={toggleModal}
+          >
+            Close
+          </Button>
+          </div>
+      </Modal>
 
-                <form onSubmit={changePassword}>
-                    <label htmlFor='oldPassword'>Old Password</label>
-                    <input type='password' id='oldPassword' placeholder='Old Password'></input>
-                    <label htmlFor='newPassword'>New Password</label>
-                    <input type='password' id='newPassword' placeholder='New Password'></input>
-                    <label htmlFor='confirmPassword'>Confirm Password</label>
-                    <input type='password' id='confirmPassword' placeholder='Confirm Password'></input>
-                    <p id='passAlertMsg'></p>
-                    <button type='submit'>Change Password</button>
-                </form>
-                <button onClick={logout}>logout</button>
+      <Button
+        color="primary"
+        type="button"
+        onClick={togglePassModal}
+        outline
+      >
+        Change Password
+      </Button>
+      {/* Modal */}
+      <Modal
+        className="modal-dialog-centered"
+        isOpen={passwordModal}
+        toggle={togglePassModal}
+      >
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLabel">
+            Change Password
+          </h5>
+          <button
+            aria-label="Close"
+            className="close"
+            data-dismiss="modal"
+            type="button"
+            onClick={togglePassModal}
+          >
+            <span aria-hidden={true}>×</span>
+          </button>
+        </div>
+        <div className="modal-body">
+<form onSubmit={changePassword}>
+            <label htmlFor='oldPassword'>Old Password</label>
+            <input type='password' id='oldPassword' placeholder='Old Password'></input>
+            <label htmlFor='newPassword'>New Password</label>
+            <input type='password' id='newPassword' placeholder='New Password'></input>
+            <label htmlFor='confirmPassword'>Confirm Password</label>
+            <input type='password' id='confirmPassword' placeholder='Confirm Password'></input>
+            <p id='passAlertMsg'></p>
+            <button type='submit'>Change Password</button>
+        </form>
+        </div>
+        <div className="modal-footer">
+          <Button
+            color="secondary"
+            data-dismiss="modal"
+            type="button"
+            onClick={togglePassModal}
+          >
+            Close
+          </Button>
+          </div>
+      </Modal>
+               
+               
+                <Button color='primary' outline onClick={logout}>logout</Button>
             </div>
         }
         </div>
-      
+    <Footer />
     </div>
   )
 }

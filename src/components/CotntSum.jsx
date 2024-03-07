@@ -79,7 +79,7 @@ function CotntSum() {
       });
       
   return (
-    <div >
+    <div id='ContSum' >
       <Header />
       <form >
       {/* <input type="file" accept="application/pdf" onChange={extractText} /> */}
@@ -114,9 +114,9 @@ function CotntSum() {
         <RingLoader color='#5e72e4' loading={loading} size={150} />
         </section>
         { response ? <p id="responceText" dangerouslySetInnerHTML={sanitizeResponse(response)}></p> : null}
-       
+        <Chatbot />
+
       </form>
-       <Chatbot />
       <Footer />
     </div>
   )

@@ -87,3 +87,48 @@ img{
  align-items: center;
  margin-top: 20px;
 }
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  padding: 10%;
+}
+
+@media screen and (max-width: 400px){
+  img{
+    width: 200;
+  height: 150px;
+  /* margin: 30px; */
+  }
+  
+  .profile-page p{
+    display: relative;
+    top: 20px;
+    text-align: center;
+    margin-right: 20px;
+  }
+  #ContSum{
+    width: min-content;
+  }
+  #aUText{
+    font-size: 2000px;
+  }
+  .row{
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 991px){
+  img{
+    width: 200;
+  height: 150px;
+  /* margin: 30px; */
+  }
+ 
+  .row{
+    margin-top: 100px;
+  }
+}
