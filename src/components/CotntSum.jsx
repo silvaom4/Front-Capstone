@@ -102,6 +102,9 @@ function CotntSum() {
         autoStart: true,
       });
       
+      const handleChat = (e) => {
+        e.preventDefault();}
+
   return (
     <div id='ContSum' >
       <Header />
@@ -115,7 +118,7 @@ function CotntSum() {
     autoStart: true,
     loop: true,
   }}
-/> Document.</h3> 
+/> Document.</h3>
 </section>
 
       <FileUpload newFile={setText} newFileName={setFileName} />
@@ -141,7 +144,7 @@ function CotntSum() {
 
         <Chatbot />
 
-        { response ? <Button color="primary" outline type="button" onClick={saveResponse} disabled={loggedIn}>{submitText}</Button> : null }
+        { response ? <Button className='center' color="primary" outline type="button" onClick={saveResponse} disabled={loggedIn}>{submitText}</Button> : null }
 
       </form>
       <Footer />
