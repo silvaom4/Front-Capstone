@@ -4,6 +4,7 @@ import Header from './Header'
 
 export default function Profile() {
     const [profile, setProfile] = useState([{}])
+    const [summaries, setSummaries] = useState([{}])
     useEffect(() => {
         fetch('/api/profile', {
             method: 'POST',
@@ -16,6 +17,21 @@ export default function Profile() {
         }).then(res => res.json())
         .then(data => {
             setProfile(data.profile)
+        })
+
+        fetch('/api/profile/loadSummaries', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userID: localStorage.getItem('ID')
+            })
+        }).then(res => res.json())
+        .then(data => {
+            setSummaries(data.summaries)
+            console.log(data)
+
         })
     },[]);
 
@@ -145,6 +161,20 @@ export default function Profile() {
                     <button type='submit'>Change Password</button>
                 </form>
                 <button onClick={logout}>logout</button>
+
+                <div>
+                    <h1>Summaries</h1>
+                    {(typeof summaries[0] === 'undefined') ?
+                    <p>No summaries</p>
+                    :
+                    summaries.map((summary) => {
+                        return (
+                            <div>
+                                <p>{summary.content}</p>
+                            </div>
+                        )
+                    })}
+            </div>
             </div>
         }
         </div>
