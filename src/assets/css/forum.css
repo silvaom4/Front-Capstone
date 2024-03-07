@@ -25,6 +25,15 @@
 #create_post Input{
     background: transparent;
 }
+#create_post Input:focus{
+    outline: none;
+    background: transparent;
+
+}
+#post_form Input:focus{
+    outline: none;
+    background: transparent;
+}
 
 #header {
     display: flex;
@@ -32,9 +41,14 @@
     align-items: center;
     margin: 20px auto;
     width: 75%;
-    height: 10vh;
-    background-color: beige;
-    border: 1px solid black;
+    height: 5vh;
+    border: 1px solid #7e32e1;
+}
+
+.Add_Modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #post {
@@ -42,9 +56,9 @@
     flex-direction: column;
     margin: 20px auto;
     width: 75%;
-    height: 25vh;
+    height: 10vh;
     background-color: beige;
-    border: 1px solid black;
+    border: 1px solid #7e32e1;
 }
 
 .forum_bottom {
