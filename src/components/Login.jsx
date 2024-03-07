@@ -11,7 +11,7 @@ export default function Login() {
         const loginPassword = document.getElementById('login_password').value
         e.preventDefault();
         
-        fetch('/api/login', {
+        fetch('https://backend-capstone-5n46.onrender.com/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

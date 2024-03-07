@@ -115,7 +115,7 @@ export default function Register() {
         const regEmail = document.getElementById('regEmail').value
         const regPassword = document.getElementById('regPassword').value
 
-        fetch('/api/register', {
+        fetch('https://backend-capstone-5n46.onrender.com/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

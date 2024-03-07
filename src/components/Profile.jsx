@@ -5,7 +5,7 @@ import Header from './Header'
 export default function Profile() {
     const [profile, setProfile] = useState([{}])
     useEffect(() => {
-        fetch('/api/profile', {
+        fetch('https://backend-capstone-5n46.onrender.com/api/profile', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -21,17 +21,17 @@ export default function Profile() {
 
     const logout = () => {
         localStorage.clear();
-        window.location.href = '/login';
+        window.location.href = 'https://backend-capstone-5n46.onrender.com/login';
     }
 
     const login = () => {
-        window.location.href = '/login';
+        window.location.href = 'https://backend-capstone-5n46.onrender.com/login';
     }
 
     const changeUserName = (e) => {
         e.preventDefault();
         const newUsername = document.getElementById('newUsername').value
-        fetch('/api/profile/changeUsername', {
+        fetch('https://backend-capstone-5n46.onrender.com/api/profile/changeUsername', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export default function Profile() {
     const changePassword = (e) => {
         e.preventDefault();
         const newPassword = document.getElementById('newPassword').value
-        fetch('/api/profile/changePassword', {
+        fetch('https://backend-capstone-5n46.onrender.com/api/profile/changePassword', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

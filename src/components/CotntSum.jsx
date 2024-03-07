@@ -27,7 +27,7 @@ function CotntSum() {
       const content = text ? text : userText;
 
     const response =  fetch(
-      `http://localhost:4000/summary?content=${content}`,
+      `https://backend-capstone-5n46.onrender.com//summary?content=${content}`,
       {
         method: "POST",
       }
