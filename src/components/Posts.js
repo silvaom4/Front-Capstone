@@ -5,7 +5,6 @@ export default function Posts(props) {
     const [replies, setReplies] = useState([{}])
     const [replyDate, setReplyDate] = useState([{}])
     const date = new Date(props.dateAdded).toLocaleString()
-    const repliesDate = new Date(replyDate).toLocaleString()
     const isAdmin = props.isAdmin === 1 ? '• Admin' : '';
 
     const loadReplies = async() => {
