@@ -17,6 +17,18 @@ function CotntSum() {
     const [loading, setLoading] = useState(false);
     const [text, setText] = useState("");
     const [fileName, setFileName] = useState("");
+    const [loggedIn, setLoggedIn] = useState("");
+    const [submitText, setSubmitText] = useState("Save Response");
+
+    useEffect(() => {
+      if (localStorage.getItem('ID')) {
+        setLoggedIn(false);
+        setSubmitText("Save Response");
+      } else {
+        setLoggedIn(true);
+        setSubmitText("Login to Save Response");
+      }
+    }, []);
     const openai = new OpenAI({
         apiKey: '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',
         dangerouslyAllowBrowser: true,
@@ -37,7 +49,19 @@ function CotntSum() {
       setLoading(false);
     });
   }
-    
+    function saveResponse() {
+      fetch('http://localhost:4000/api/saveResponse', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userID: localStorage.getItem('ID'),
+          content: (String(document.getElementById('responceText').textContent)).replace(/\r?\n|\r/g, ""),
+        })
+      }).then(res => res.json())
+    }  
+
     function handleChange(event) {
       setUserText(event.target.value);
     }
@@ -114,7 +138,7 @@ function CotntSum() {
         <RingLoader color='#5e72e4' loading={loading} size={150} />
         </section>
         { response ? <p id="responceText" dangerouslySetInnerHTML={sanitizeResponse(response)}></p> : null}
-       
+        { response ? <Button color="primary" outline type="button" onClick={saveResponse} disabled={loggedIn}>{submitText}</Button> : null }
       </form>
        <Chatbot />
       <Footer />
