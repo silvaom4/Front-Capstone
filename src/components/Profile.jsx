@@ -36,20 +36,35 @@ export default function Profile() {
 
   const [summaries, setSummaries] = useState([{}]);
 
-  useEffect(() => {
-    fetch("/api/profile", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userID: localStorage.getItem("ID"),
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setProfile(data.profile);
-      });
+    const [summaries, setSummaries] = useState([{}])
+
+    useEffect(() => {
+        fetch('https://backend-capstone-5n46.onrender.com/api/profile', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userID: localStorage.getItem('ID')
+            })
+        }).then(res => res.json())
+        .then(data => {
+            setProfile(data.profile)
+        })
+
+        fetch('/api/profile/loadSummaries', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userID: localStorage.getItem('ID')
+            })
+        }).then(res => res.json())
+        .then(data => {
+            setSummaries(data.summaries)
+            console.log(data)
+
 
     fetch("/api/profile/loadSummaries", {
       method: "POST",
@@ -67,75 +82,73 @@ export default function Profile() {
       });
   }, []);
 
-  const logout = () => {
-    localStorage.clear();
-    window.location.href = "/login";
-  };
 
-  const login = () => {
-    window.location.href = "/login";
-  };
+    const logout = () => {
+        localStorage.clear();
+        window.location.href = 'https://backend-capstone-5n46.onrender.com/login';
+    }
 
-  const changeUserName = (e) => {
-    e.preventDefault();
-    const newUsername = document.getElementById("newUsername").value;
-    fetch("/api/profile/changeUsername", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userID: localStorage.getItem("ID"),
-        password: document.getElementById("password").value,
-        username: localStorage.getItem("Username"),
-        newUsername: newUsername,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.message !== "Username changed successfully") {
-          document.getElementById("alertMsg").innerHTML = data.message;
-          document.getElementById("alertMsg").style.color = "red";
-          return;
-        } else {
-          console.log(data.message);
-          document.getElementById("alertMsg").innerHTML =
-            "Username changed successfully";
-          document.getElementById("alertMsg").style.color = "green";
-          localStorage.setItem("Username", newUsername);
-          window.location.href = "/profile";
-        }
-      });
-  };
+    const login = () => {
+        window.location.href = 'https://backend-capstone-5n46.onrender.com/login';
+    }
 
-  const changePassword = (e) => {
-    e.preventDefault();
-    const newPassword = document.getElementById("newPassword").value;
-    fetch("/api/profile/changePassword", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userID: localStorage.getItem("ID"),
-        oldPassword: document.getElementById("oldPassword").value,
-        newPassword: newPassword,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.message !== "Password changed successfully") {
-          document.getElementById("passAlertMsg").innerHTML = data.message;
-          document.getElementById("passAlertMsg").style.color = "red";
-          return;
-        } else {
-          console.log(data.message);
-          document.getElementById("passAlertMsg").innerHTML =
-            "Password changed successfully";
-          document.getElementById("passAlertMsg").style.color = "green";
-        }
-      });
-  };
+    const changeUserName = (e) => {
+        e.preventDefault();
+        const newUsername = document.getElementById('newUsername').value
+        fetch('https://backend-capstone-5n46.onrender.com/api/profile/changeUsername', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userID: localStorage.getItem('ID'),
+                password: document.getElementById('password').value,
+                username: localStorage.getItem('Username'),
+                newUsername: newUsername
+            })
+        }).then(res => res.json())
+        .then(data => {
+            if (data.message !== 'Username changed successfully') {
+                document.getElementById('alertMsg').innerHTML = data.message;
+                document.getElementById('alertMsg').style.color = 'red'
+                return
+            } else {
+                console.log(data.message)
+                document.getElementById('alertMsg').innerHTML = 'Username changed successfully'
+                document.getElementById('alertMsg').style.color = 'green'
+                localStorage.setItem('Username', newUsername)
+                window.location.href = '/profile'
+            }
+        })
+    }
+
+    const changePassword = (e) => {
+        e.preventDefault();
+        const newPassword = document.getElementById('newPassword').value
+        fetch('https://backend-capstone-5n46.onrender.com/api/profile/changePassword', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userID: localStorage.getItem('ID'),
+                oldPassword: document.getElementById('oldPassword').value,
+                newPassword: newPassword
+            })
+        }).then(res => res.json())
+        .then(data => {
+            if (data.message !== 'Password changed successfully') {
+                document.getElementById('passAlertMsg').innerHTML = data.message;
+                document.getElementById('passAlertMsg').style.color = 'red'
+                return
+            } else {
+                console.log(data.message)
+                document.getElementById('passAlertMsg').innerHTML = 'Password changed successfully'
+                document.getElementById('passAlertMsg').style.color = 'green'
+            }
+        })
+    }
+
 
   // const changeProfilePicture = (e) => {
   //     e.preventDefault();
