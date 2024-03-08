@@ -26,6 +26,7 @@ export default function Chatbot() {
   const chatAnswer = { text: "Chat input", fromUser: false };
 
   async function getResponse() {
+
     if (chatInput === "") {
       return;
     } else {
@@ -70,7 +71,8 @@ export default function Chatbot() {
     setChatHistoryData([]);
   };
 
-  const handleOpenButton = () => {
+  const handleOpenButton = (e) => {
+    e.preventDefault();
     setOpenChat(true);
     setChatContent([
       { text: "Hello! How can I assist you today?", fromUser: false },
@@ -85,7 +87,7 @@ export default function Chatbot() {
 
   return (
     <div>
-      <button className="open-modal" onClick={() => handleOpenButton()}>
+      <button className="open-modal" onClick={(e) => handleOpenButton(e)}>
         <TbRobot />
       </button>
 
