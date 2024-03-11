@@ -64,13 +64,15 @@ export default function Chatbot() {
     }
   }
 
-  const handleCloseButton = () => {
+  const handleCloseButton = (e) => {
+    e.preventDefault();
     setOpenChat(false);
     setChatContent([]);
     setChatHistoryData([]);
   };
 
-  const handleOpenButton = () => {
+  const handleOpenButton = (e) => {
+    e.preventDefault();
     setOpenChat(true);
     setChatContent([
       { text: "Hello! How can I assist you today?", fromUser: false },
@@ -85,11 +87,11 @@ export default function Chatbot() {
 
   return (
     <div>
-      <button className="open-modal" onClick={() => handleOpenButton()}>
+      <button className="open-modal" onClick={(e) => handleOpenButton(e)}>
         <TbRobot />
       </button>
 
-      <ChatContent open={openChat} onClose={() => handleCloseButton()}>
+      <ChatContent open={openChat} onClose={(e) => handleCloseButton(e)}>
         <div className="modal-container">
           <h3 className="chatbot-header">
             MessageBot
@@ -120,7 +122,7 @@ export default function Chatbot() {
               <input
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
-                name="chat-input"
+                name="chat-inpute"
                 id="chat-input"
                 placeholder="Type your message here"
                 col="40"

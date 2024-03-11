@@ -59,26 +59,30 @@ export default function Forum() {
     }
     
 
+    // useEffect(() => {
+    //     loadForum();
+
+    //     // post.addEventListener('input', (e) => {
+    //     //     setCurrentLength(post.value.length)
+    //     // })
+
+    //     // if (localStorage.getItem('ID') === null) {
+    //     //     document.getElementById('header').disabled = true
+    //     //     document.getElementById('post').disabled = true
+    //     //     document.getElementById('header').placeholder = 'Login to post'
+    //     //     document.getElementById('post').placeholder = 'Login to post'
+    //     //     document.getElementById('post_btn').disabled = true
+    //     // }
+    // },[]);
+
     useEffect(() => {
-        const post = document.getElementById('post')
         loadForum();
-
-        // post.addEventListener('input', (e) => {
-        //     setCurrentLength(post.value.length)
-        // })
-
-        if (localStorage.getItem('ID') === null) {
-            document.getElementById('header').disabled = true
-            document.getElementById('post').disabled = true
-            document.getElementById('header').placeholder = 'Login to post'
-            document.getElementById('post').placeholder = 'Login to post'
-            document.getElementById('post_btn').disabled = true
-        }
     },[]);
     const [exampleModal, setExampleModal] = useState(false);
     
     const toggleModal = () => {
         setExampleModal(!exampleModal);
+
     };
 
   return (
