@@ -6,12 +6,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px 140px;
-    height: 200px;
+    /* margin: 20px 140px; */
+    /* height: 200px; */
+    width: 75%;
     padding: 20px;
     border: 1px solid #000;
     border-radius: 10px;
-    /* background: #dee2e6; */
+    background: white;
     box-shadow: 5px 5px 5px #5e72e4;
 }
 #UploadFileBox:hover{
@@ -27,10 +28,22 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+#userInputText{
+  width: 57%;
+  align-self: center;
 }
 #InputText button{
   /* background: #dee2e6; */
   margin: 20px;
+  width: 20%;
+  align-self: center;
+
+}
+
+#typeWriter h2{
+  padding-top: 50px;
 }
 
 #responceText{
@@ -52,9 +65,42 @@
   align-items: center;
   justify-content: center;
 }
+.aboutCard{
+  padding-top: 3%;
+  background: rgba(209, 206, 206, 0.687);
+
+}
+#MTTText{
+  margin-bottom: 55px;
+}
+.Card{
+}
+#aboutText{
+  display:flex;
+  justify-content: start;
+  align-items: start;
+  padding: 20px;
+  margin: 20px;
+  color: white;
+  margin-bottom: 30px;
+
+}
+#section{
+  margin-top: 5%;
+}
+.profile-page h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+}
 
 #typeWriter h3{
   margin: 20px;
+}
+#typeWriter section{
+margin-top: 10%;
 }
 #profileSect{
   display: flex;
@@ -69,10 +115,55 @@
 .PPText span{
   color: white;
 }
+#typeTopic{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 50px auto;
+    border: 2px solid ;
+    width: 1000px;
+    padding: 50px;
+    font-family:'Cormorant Garamond', serif;
+    /* color: #32325d; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+.wave{
+  transform: rotate(0.5turn);
+}
+#hero-text{
+  background: #8965e0;
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: 100px;
+  /* padding: 30px 10px; */
+  display: flex;
+  justify-content: space-evenly;
+
+}
+#hero-text p{
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px;
+}
+#hero-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+  border: #bf1414;
+}
+#hero-buttons Button{
+ /* color: #8965e0; */
+}
 
 img{
-  width: 300px;
-  height: 200px;
+  object-fit: contain;
   
 }
 #Loading{

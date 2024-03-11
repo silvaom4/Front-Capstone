@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import Typewriter from 'typewriter-effect';
 import OpenAI from "openai";
 import sanitizeHtml from "sanitize-html";
@@ -8,6 +8,8 @@ import FileUpload from "./FileUpload";
 import Header from './Header';
 import Footer from "./Footer";
 import Chatbot from "./chatbot";
+import Wave from 'react-wavify'
+
 
 
 function CotntSum() {
@@ -19,6 +21,7 @@ function CotntSum() {
     const [fileName, setFileName] = useState("");
     const [loggedIn, setLoggedIn] = useState("");
     const [submitText, setSubmitText] = useState("Save Response");
+    const section1Ref = useRef(null);
 
     useEffect(() => {
       if (localStorage.getItem('ID')) {
@@ -101,14 +104,39 @@ function CotntSum() {
         strings: ['Hello', 'World'],
         autoStart: true,
       });
+      const scrollToSection = (ref) => {
+        ref.current.scrollIntoView({ behavior: 'smooth' });
+      };
       
   return (
     <div id='ContSum' >
       <Header />
       <form >
-      {/* <input type="file" accept="application/pdf" onChange={extractText} /> */}
       <section id='typeWriter'>
-      <h3 className="display-3 text-muted" >Content Breakdown & Summarization</h3>
+      <div id="hero-text">
+      <div>
+              <h2 className="display-3 text-center" id="contsum" ><strong>Content Breakdown<br /> & <br />Summarization</strong></h2>
+         <p>Enhance Your Understanding: iSummarize simplifies complex content into clear insights. 
+        <br />Discover the power of efficient summarization for enhanced productivity and informed decision-making.
+      </p>
+      </div>
+     <div id='hero-buttons'>
+        <Button onClick={() => scrollToSection(section1Ref)} color='primary'>Summarize Content Now</Button>
+        <Button color='primary'>SignUp/Login</Button>
+     </div>
+      </div>
+      <Wave fill="#8965e0"
+      className="wave"
+        paused={false}
+        style={{ display: 'flex' }}
+        options={{
+          height: 20,
+          amplitude: 20,
+          speed: 0.3,
+          points: 6
+        }}
+  />
+  <section ref={section1Ref}>
      <h3 >Recive a Broken Down Summary For Any <Typewriter
   options={{
     strings: ['Financial', 'Legal', 'Medical', 'Educational', 'Technical', 'Type Of'],
@@ -117,32 +145,33 @@ function CotntSum() {
   }}
 /> Document.</h3> 
 </section>
-
+</section>
+    <section id='typeTopic'>
       <FileUpload newFile={setText} newFileName={setFileName} />
       <section id="fileName">
       { fileName ? <h4 >File Name: {fileName}</h4> : null }
       </section>
       <section id="InputText">
         <Input
-            // id="exampleFormControlTextarea1"
+            id="userInputText"
             placeholder="Enter your text here"
             maxLength={20000}
             onChange={handleChange}
             rows="6"
             type="textarea"
-            bsSize="sm"
+            bsSize="lg"
           />
           { response ? <Button color="primary" outline type="button" onClick={handleClear}>Clear</Button> :<Button color="primary" outline type="button" onClick={handleSubmit}>Submit</Button> }
         </section>
         <section id='Loading'>
         <RingLoader color='#5e72e4' loading={loading} size={150} />
         </section>
-        { response ? <p id="responceText" dangerouslySetInnerHTML={sanitizeResponse(response)}></p> : null}
+        </section>
 
+        { response ? <p id="responceText" dangerouslySetInnerHTML={sanitizeResponse(response)}></p> : null}
         <Chatbot />
 
-        { response ? <Button color="primary" outline type="button" onClick={saveResponse} disabled={loggedIn}>{submitText}</Button> : null }
-
+        { response ? <Button color="primary" className="center" outline type="button" onClick={saveResponse} disabled={loggedIn}>{submitText}</Button> : null }
       </form>
       <Footer />
     </div>

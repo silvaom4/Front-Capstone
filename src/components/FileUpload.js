@@ -26,7 +26,7 @@ const FileUpload = ( {newFile, newFileName} ) => {
             File Upload
         </h1> */}
       <input className="is-valid" {...getInputProps()} />
-      <h6>Drag and drop files here or click to browse.</h6>
+      <h6>Drag and drop PDF/TXT here or click to browse.</h6>
     </div>
   );
 };
