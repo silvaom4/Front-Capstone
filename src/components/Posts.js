@@ -5,10 +5,11 @@ export default function Posts(props) {
     const [replies, setReplies] = useState([{}])
     const [replyDate, setReplyDate] = useState([{}])
     const date = new Date(props.dateAdded).toLocaleString()
+    const repliesDate = new Date(replyDate).toLocaleString()
     const isAdmin = props.isAdmin === 1 ? '• Admin' : '';
 
     const loadReplies = async() => {
-        await fetch('/api/forum/replies', {
+        await fetch('https://backend-capstone-5n46.onrender.com/api/forum/replies', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +29,7 @@ export default function Posts(props) {
         const reply = document.getElementById(props.forumID).value
         const userID = localStorage.getItem('ID')
 
-        fetch('/api/forum/reply', {
+        fetch('https://backend-capstone-5n46.onrender.com/api/forum/reply', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -26,6 +26,7 @@ export default function Chatbot() {
   const chatAnswer = { text: "Chat input", fromUser: false };
 
   async function getResponse() {
+
     if (chatInput === "") {
       return;
     } else {
@@ -35,7 +36,7 @@ export default function Chatbot() {
       ]);
       setChatHistoryData((prevChatContent) => [...prevChatContent, chatInput]);
       const response = await fetch(
-        `http://localhost:4000/chat?question=${chatInput}&history=${JSON.stringify(
+        `https://backend-capstone-5n46.onrender.com/chat?question=${chatInput}&history=${JSON.stringify(
           chatHistoryData
         )}`,
         {

@@ -1,0 +1,135 @@
+* {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.profile-h1 {
+  color: #32325d;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  padding: 50px 0 0 0;
+  font-size: 35px;
+}
+
+.profile {
+  border: 2px solid #ddcfff;
+  box-shadow: 1px 0px 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 50px;
+  background-color: #f7f7f7;
+}
+
+.login-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stock-avatar {
+  width: 25vh;
+  height: 25vh;
+}
+
+.settings-buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: right;
+}
+
+.setting-btn {
+  border: none;
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #8965e0;
+  color: white;
+}
+
+.setting-btn:hover {
+  background-color: #ddcfff;
+  color: black;
+}
+
+.modal-body-username {
+  border: 1px solid #ddcfff;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-username-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  color: #32325d;
+}
+.modal-username-form input {
+  margin: 10px;
+  padding: 10px;
+  width: 40vw;
+  max-width: 300px;
+  border: 1px solid #ccb8fa;
+  border-radius: 4px;
+}
+
+.modal-body-password {
+  border: 1px solid #ddcfff;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  color: #32325d;
+}
+
+.modal-password-form input {
+  margin: 10px;
+  padding: 10px;
+  width: 40vw;
+  max-width: 300px;
+  border: 1px solid #ccb8fa;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 400px) {
+  .profile {
+    flex-direction: column;
+    margin: 40px;
+  }
+
+  .stock-avatar {
+    width: 25vh;
+    height: 25vh;
+  }
+
+  .setting-btn {
+    font-size: 0.78em;
+    width: 50vw;
+    padding: 8px;
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 768px) {
+  .profile {
+    margin: 40px;
+  }
+
+  .stock-avatar {
+    width: 15vh;
+    height: 15vh;
+  }
+
+  .setting-btn {
+    font-size: 0.78em;
+    width: 30vw;
+    padding: 10px;
+    margin: 15px;
+  }
+}

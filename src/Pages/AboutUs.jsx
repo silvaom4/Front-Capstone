@@ -13,6 +13,9 @@ function AboutUs() {
       <main className="profile-page" >
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
+            <h1>Mission Statement</h1>
+            <h5 id='aboutText'>At iSummarize, our mission is to empower individuals and organizations to unlock the full potential of information by providing cutting-edge summarization solutions. We are committed to simplifying complex content, fostering clarity, and accelerating comprehension. By harnessing the power of artificial intelligence and innovative technologies, we strive to streamline information consumption, enhance productivity, and enable informed decision-making. Our goal is to revolutionize the way people engage with and extract value from vast amounts of data, ensuring that knowledge is accessible, actionable, and transformative for all.
+</h5>
             <div className="shape shape-style-1 shape-default alpha-4">
               <span />
               <span />
@@ -24,6 +27,7 @@ function AboutUs() {
             </div>
             {/* SVG separator */}
             <div className="separator separator-bottom separator-skew">
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="none"
@@ -39,10 +43,13 @@ function AboutUs() {
               </svg>
             </div>
           </section>
-          <section className="section">
+          <section id="section">
             <Container>
               <Card className="card-profile shadow mt--300">
-                <div className="px-4">
+                <div className="px-4 aboutCard">
+                  <Row className="justify-content-center">
+                    <h2 id='MTTText'>Meet the team</h2>
+                  </Row>
                   <Row className="justify-content-center">
                     <Col className="order-lg-2" lg="4" xs='8'>
                       <div className="card-profile-image">
@@ -56,7 +63,7 @@ function AboutUs() {
                         
                       </div>
                       <div className='PPText'>   
-                          <p className="heading text-center "> Oscar Silva</p>
+                          <p className="heading text-center "> Oscar Silva <br /> (co-founder)</p>
                           </div>
                     </Col>
                     <Col
@@ -73,7 +80,7 @@ function AboutUs() {
                           />
                         </a>
                         <div className='PPText mt-9'>   
-                          <p className="heading text-center ">Jaylin Ceja</p>
+                          <p className="heading text-center ">Jaylin Ceja <br /> (co-founder)</p>
                           </div>
                       </div>
                       
@@ -94,29 +101,14 @@ function AboutUs() {
                             </a>
                             </div>
                              <div className='PPText'>   
-                          <p className="heading">Keyondre Sincere Baxter</p>
+                          <p className="heading text-center">Keyondre Sincere Baxter <br /> (co-founder)</p>
                           </div>
                         </Row>
                        
                           </section>
                     </Col>
                   </Row>
-                  <div className="text-center mt-5" id='aUText'>
-                    <h5>
-                    At iSummarize, our mission is to empower individuals and organizations to unlock the full potential of information by providing cutting-edge summarization solutions. We are committed to simplifying complex content, fostering clarity, and accelerating comprehension. By harnessing the power of artificial intelligence and innovative technologies, we strive to streamline information consumption, enhance productivity, and enable informed decision-making. Our goal is to revolutionize the way people engage with and extract value from vast amounts of data, ensuring that knowledge is accessible, actionable, and transformative for all.
-
-                    </h5>
-                  </div>
-                  <div className="mt-5 py-5 border-top text-center ">
-                    <Row className="justify-content-center">
-                      <Col lg="9">
-                        <p>
-                          
-                        </p>
-                        
-                      </Col>
-                    </Row>
-                  </div>
+                  
                 </div>
               </Card>
             </Container>
