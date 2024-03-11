@@ -61,7 +61,7 @@ export default function Forum() {
 
     useEffect(() => {
         loadForum();
-    },[]);
+    },[document.getElementById('post')]);
     const [exampleModal, setExampleModal] = useState(false);
     
     const toggleModal = () => {
