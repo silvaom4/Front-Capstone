@@ -71,3 +71,21 @@ Assuming the Backend is already up and running:
    - Enter a topic and message for your post.
    - Click the "Submit" button to add your post to the forum.
    - Engage in discussions with other users by commenting on posts.
+
+### Testing with Cypress
+- Make sure all dependencies are in.
+```
+npm i
+```
+- Then start the application
+``` 
+npm start
+```
+- To start Cypress
+```
+npm run cypress:open
+```
+   - Then click end to end testing 
+   - Start e2e testing in chrome
+   - Click frontend spec
+   - This will run the frontend testing 
