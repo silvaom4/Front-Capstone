@@ -3,6 +3,7 @@ import { Button, Card, Container, Row, Col } from "reactstrap";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Chatbot from '../components/chatbot';
+import AboutCSS from '../assets/css/about.css'
 
 // require('../images/HeadShot.png');
 
@@ -13,7 +14,7 @@ function AboutUs() {
       <main className="profile-page" >
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
-            <h1>Mission Statement</h1>
+            <h1 className='about-h1'>Mission Statement</h1>
             <h5 id='aboutText'>At iSummarize, our mission is to empower individuals and organizations to unlock the full potential of information by providing cutting-edge summarization solutions. We are committed to simplifying complex content, fostering clarity, and accelerating comprehension. By harnessing the power of artificial intelligence and innovative technologies, we strive to streamline information consumption, enhance productivity, and enable informed decision-making. Our goal is to revolutionize the way people engage with and extract value from vast amounts of data, ensuring that knowledge is accessible, actionable, and transformative for all.
 </h5>
             <div className="shape shape-style-1 shape-default alpha-4">
@@ -56,7 +57,8 @@ function AboutUs() {
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <img
                             alt="..."
-                            className="rounded-circle"
+                            className='about-img'
+                            // className="rounded-circle"
                             src={require('../images/HeadShot2.png')}
                           />
                         </a>
@@ -75,7 +77,8 @@ function AboutUs() {
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <img
                             alt="..."
-                            className="rounded-circle"
+                            className='about-img'
+                            // className="rounded-circle"
                             src={require('../images/HeadShot3.png')}
                           />
                         </a>
@@ -95,7 +98,8 @@ function AboutUs() {
                             <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <img
                             alt="..."
-                            className="rounded-circle"
+                            className='about-img'
+                            // className="rounded-circle"
                             src={require('../images/HeadShot.png')}
                           />
                             </a>

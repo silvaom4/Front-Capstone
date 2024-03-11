@@ -19,7 +19,7 @@
     animation: chatBotButtonRotate 5s infinite;
     position: fixed;
     right: 55px;
-    top: 480px;
+    top: 620px;
     z-index: 6;
 }
 
@@ -234,7 +234,7 @@
         animation: chatBotButtonRotate 5s infinite;
         position: fixed;
         right: 35px;
-        top: 550px;
+        top: 620px;
         z-index: 6;
     }
     
