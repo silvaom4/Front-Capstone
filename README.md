@@ -1,4 +1,4 @@
-# Welcome to the iSummarize Backend Repository
+# Welcome to the iSummarize Frontend Repository
 
 This repository will show you all the commands to run the frontend portion of the application. iSummarize is an application that allows users to summarize documents or portions of texts into easy-to-read detailed notes.
 
