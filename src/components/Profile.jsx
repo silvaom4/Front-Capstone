@@ -85,11 +85,11 @@ export default function Profile() {
 
     const logout = () => {
         localStorage.clear();
-        window.location.href = 'https://backend-capstone-5n46.onrender.com/login';
+        window.location.href = '/login';
     }
 
     const login = () => {
-        window.location.href = 'https://backend-capstone-5n46.onrender.com/login';
+        window.location.href = '/login';
     }
 
     const changeUserName = (e) => {
