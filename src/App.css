@@ -85,9 +85,7 @@
   margin-bottom: 30px;
 
 }
-#section{
-  margin-top: 5%;
-}
+
 .profile-page h1{
   display: flex;
   justify-content: center;
@@ -166,10 +164,7 @@ margin-top: 10%;
 
 }
 
-img{
-  object-fit: contain;
-  
-}
+
 #Loading{
  display: flex;
  justify-content: center;
@@ -193,12 +188,6 @@ img{
 }
 
 @media screen and (max-width: 400px){
-  img{
-    width: 200;
-  height: 150px;
-  /* margin: 30px; */
-  }
-  
   .profile-page p{
     display: relative;
     top: 20px;
@@ -219,6 +208,7 @@ img{
 }
 
 @media screen and (max-width: 991px){
+
   img{
     width: 200;
   height: 150px;
@@ -227,6 +217,7 @@ img{
   #ContSum{
     width: min-content;
   }
+
  
   .row{
     margin-top: 100px;
