@@ -20,43 +20,46 @@ import {Input, Button,
   } from 'reactstrap'
 
 export default function Forum() {
-  const [currentLength, setCurrentLength] = useState(0);
-  const [forumPosts, setForumPosts] = useState([{}]);
-  const loadForum = () => {
-    fetch("https://backend-capstone-5n46.onrender.com/api/forum/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setForumPosts(data.posts);
-      });
-  };
-}
+    const [currentLength , setCurrentLength] = useState(0)
+    const [forumPosts, setForumPosts] = useState([{}]);
+    const loadForum = () => {
+        fetch('https://backend-capstone-5n46.onrender.com/api/forum/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setForumPosts(data.posts)
+        })
+    }
 
-  const postForum = (e) => {
-    e.preventDefault();
-    const post = document.getElementById("post").value;
-    const header = document.getElementById("header").value;
-    const userID = localStorage.getItem("ID");
+    const postForum = (e) => {
+        e.preventDefault();
+        const post = document.getElementById('post').value
+        const header = document.getElementById('header').value
+        const userID = localStorage.getItem('ID')
 
-    fetch("https://backend-capstone-5n46.onrender.com/api/forum/post", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userID: userID,
-        header: header,
-        post: post,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.message);
+        fetch('https://backend-capstone-5n46.onrender.com/api/forum/post', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userID: userID,
+                header: header,
+                post: post
+            })
+        }).then(res => res.json())
+        .then(data => {
+            console.log(data.message)
+            loadForum();
+        })
+    }
+    
+
+    useEffect(() => {
         loadForum();
     },[]);
     const [exampleModal, setExampleModal] = useState(false);
@@ -65,22 +68,19 @@ export default function Forum() {
         setExampleModal(!exampleModal);
     };
 
-    useEffect(() => {
-        loadForum();
-    });
-
   return (
     <div>
-      <Header />
-      <div className="forum_screen">
-        {typeof forumPosts[0] === "undefined" ? (
-          <p>No posts</p>
-        ) : (
-          forumPosts.map((post) => {
-            return <Posts {...post} />;
-          })
-        )}
-      </div>
+        <Header />
+        <div className='forum_screen'>
+        {(typeof forumPosts[0] === 'undefined') ? 
+        <p>No posts</p> 
+        : 
+        forumPosts.map((post) => {
+            return (
+                <Posts {...post}/>
+            )
+        })}
+        </div>
 
        
             {/* <InputGroup> */}
@@ -148,5 +148,5 @@ export default function Forum() {
         <Chatbot />
         <Footer />
     </div>
-  );
+  )
 }
