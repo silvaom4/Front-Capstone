@@ -1,8 +1,7 @@
 import React from 'react'
 import { Button, Input, FormGroup, InputGroup,InputGroupText, } from "reactstrap";
 import '../assets/css/login.css'
-// import Header from './Header';
-import B_L_Nav from './B_L_Nav';
+import Header from './Header';
 import Footer from './Footer';
 
 export default function Login() {
@@ -43,7 +42,7 @@ export default function Login() {
     }
   return (
     <>
-      <B_L_Nav />
+      <Header />
     <div>
     <div className='login_form'>
         <div className='login_input'>

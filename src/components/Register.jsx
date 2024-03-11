@@ -5,7 +5,7 @@ import { IonIcon } from "@ionic/react";
 import { person } from "ionicons/icons";
 import Footer from './Footer';
 import '../assets/css/login.css'
-import B_L_Nav from './B_L_Nav';
+import Header from './Header';
 
 export default function Register() {
     const [validFirstName, setValidFirstName] = useState(false)
@@ -147,7 +147,7 @@ export default function Register() {
     }
   return (
     <div>
-        <B_L_Nav />
+        <Header />
     <div className='register'>
         
       <form onSubmit={register} className='login reglog'>

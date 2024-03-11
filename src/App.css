@@ -154,13 +154,12 @@ margin-top: 10%;
   justify-content: center;
   align-items: space-evenly;
   justify-content: space-evenly;
-  border: #bf1414;
 }
 #hero-buttons Button{
  /* color: #8965e0; */
 }
 .active{
-  background: #4403de;
+  background: #9078c8b8;
 
 }
 
