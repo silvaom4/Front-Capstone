@@ -50,6 +50,12 @@
     justify-content: center;
     align-items: center;
 }
+.forum_title{
+    text-align: center;
+    padding: 50px 50px 0px 50px;
+    border-bottom: #7e32e1 1px solid;
+    margin: auto 100px ;
+}
 
 #post {
     display: flex;

@@ -159,6 +159,10 @@ margin-top: 10%;
 #hero-buttons Button{
  /* color: #8965e0; */
 }
+.active{
+  background: #4403de;
+
+}
 
 
 #Loading{
@@ -190,9 +194,11 @@ margin-top: 10%;
     text-align: center;
     margin-right: 20px;
   }
-  #ContSum{
-    width: min-content;
+  .active{
+    background-color: transparent;
+    text-decoration: underline;
   }
+  
   #aUText{
     font-size: 2000px;
   }
@@ -202,8 +208,19 @@ margin-top: 10%;
 }
 
 @media screen and (max-width: 991px){
+
+  img{
+    width: 200;
+  height: 150px;
+  /* margin: 30px; */
+  }
+  #ContSum{
+    width: min-content;
+  }
+
  
   .row{
     margin-top: 100px;
   }
+  
 }
