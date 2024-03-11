@@ -161,6 +161,10 @@ margin-top: 10%;
 #hero-buttons Button{
  /* color: #8965e0; */
 }
+.active{
+  background: #4403de;
+
+}
 
 img{
   object-fit: contain;
@@ -201,9 +205,11 @@ img{
     text-align: center;
     margin-right: 20px;
   }
-  #ContSum{
-    width: min-content;
+  .active{
+    background-color: transparent;
+    text-decoration: underline;
   }
+  
   #aUText{
     font-size: 2000px;
   }
@@ -218,8 +224,12 @@ img{
   height: 150px;
   /* margin: 30px; */
   }
+  #ContSum{
+    width: min-content;
+  }
  
   .row{
     margin-top: 100px;
   }
+  
 }

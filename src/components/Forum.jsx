@@ -71,6 +71,7 @@ export default function Forum() {
   return (
     <div>
         <Header />
+        <h1 className='forum_title'>Forum</h1>
         <div className='forum_screen'>
         {(typeof forumPosts[0] === 'undefined') ? 
         <p>No posts</p> 

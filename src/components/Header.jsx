@@ -1,22 +1,37 @@
-import React from "react";
-// import {Navbar, Container, NavbarBrand, NavbarText, Row, Col} from "reactstrap";
+import React, { useState } from "react";
+import { NavLink as RRNavLink, useLocation } from "react-router-dom";
 import {
-    UncontrolledCollapse,
-    DropdownMenu,
-    DropdownItem,
-    UncontrolledDropdown,
-    NavbarBrand,
-    Navbar,
-    NavItem,
-    NavLink,
-    NavbarText,
-    Nav,
-    Container,
-    Row,
-    Col
-  } from "reactstrap";
+  UncontrolledCollapse,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
+  NavbarBrand,
+  Navbar,
+  NavItem,
+  NavLink,
+  NavbarText,
+  Nav,
+  Container,
+  Row,
+  Col
+} from "reactstrap";
 
 function Header() {
+  const [activeLink, setActiveLink] = useState('');
+  const location = useLocation();
+
+  // Define routes and corresponding links
+  const routes = [
+    { path: '/forum', name: 'Forum' },
+    { path: '/about', name: 'About Us' },
+    { path: '/contact', name: 'Contact Us' }
+  ];
+
+  // Update active link when location changes
+  React.useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location.pathname]);
+
   const loginStatus = localStorage.getItem('ID') === null ? 'Login/Register' : localStorage.getItem('Username')
   const isAdmin = localStorage.Admin == '1' ? '• Admin' : '';
   const loginStatusRoute = localStorage.getItem('ID') === null ? '/login' : '/profile'
@@ -29,9 +44,7 @@ function Header() {
           expand="lg"
         >
           <Container>
-            {/* <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}> */}
-              <NavLink href="/"><h2>iSummarize</h2></NavLink>
-            {/* </NavbarBrand> */}
+            <NavbarBrand href="/"><h2>iSummarize</h2></NavbarBrand>
             <button
               className="navbar-toggler"
               data-target="#navbar-primary"
@@ -62,21 +75,19 @@ function Header() {
                 </Row>
               </div>
               <Nav className="ml-lg-auto" navbar>
-                <NavItem>
-                  <NavLink href="/forum" >
-                    Fourm 
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/about" >
-                    About Us
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/contact" >
-                    Contact Us
-                  </NavLink>
-                </NavItem>
+                {routes.map((route, index) => (
+                  <NavItem key={index}>
+                    <NavLink
+                      tag={RRNavLink}
+                      to={route.path}
+                      exact
+                      activeClassName="active"
+                      onClick={() => setActiveLink(route.path)}
+                    >
+                      {route.name}
+                    </NavLink>
+                  </NavItem>
+                ))}
                 <UncontrolledDropdown nav>
                   <NavLink
                     data-toggle="dropdown"
@@ -118,4 +129,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;

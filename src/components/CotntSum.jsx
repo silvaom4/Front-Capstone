@@ -122,7 +122,7 @@ function CotntSum() {
       </div>
      <div id='hero-buttons'>
         <Button onClick={() => scrollToSection(section1Ref)} color='primary'>Summarize Content Now</Button>
-        <Button color='primary'>SignUp/Login</Button>
+        <Button color='primary' href='/register'>SignUp/Login</Button>
      </div>
       </div>
       <Wave fill="#8965e0"
